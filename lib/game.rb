@@ -29,7 +29,7 @@ class Game
 		display_game_menu
 
 		while user_input < 1 || user_input > 5 do
-			print "                                > "
+			print "                   > "
 			user_input = gets.to_i
 		end
 
@@ -63,30 +63,30 @@ class Game
 	#menu d'acceuil - press enter to play a game
 	def display_menu_acceuil
 		system 'clear'
-		puts "          /\\  ________ \\ "
-		puts "         /  \\ \\______/\\ \\ "
-		puts "        / /\\ \\ \\  / /\\ \\ \\ "
-		puts "       / / /\\ \\ \\/ / /\\ \\ \\ "
-		puts "      / / /__\\ \\ \\/_/__\\_\\ \\__________ "
-		puts "     / /_/____\\ \\__________  ________ \\ "
-		puts "     \\ \\ \\____/ / ________/\\ \\______/\\ \\ "
-		puts "      \\ \\ \\  / / /\\ \\  / /\\ \\ \\  / /\\ \\ \\ "
-		puts "       \\ \\ \\/ / /\\ \\ \\/ / /\\ \\ \\/ / /\\ \\ \\ "
-		puts "        \\ \\/ / /__\\_\\/ / /__\\ \\ \\/_/__\\_\\ \\ "
-		puts "         \\  /_/______\\/_/____\\ \\___________\\ "
-		puts "         /  \\ \\______/\\ \\____/ / ________  / " 
-		puts "        / /\\ \\ \\  / /\\ \\ \\  / / /\\ \\  / / / "
-		puts "       / / /\\ \\ \\/ / /\\ \\ \\/ / /\\ \\ \\/ / / "
-		puts "      / / /__\\ \\ \\/_/__\\_\\/ / /__\\_\\/ / / "
-		puts "     / /_/____\\ \\_________\\/ /______\\/ / "
-		puts "     \\ \\ \\____/ / ________  __________/ "
-		puts "      \\ \\ \\  / / /\\ \\  / / / "
-		puts "       \\ \\ \\/ / /\\ \\ \\/ / / "
-		puts "        \\ \\/ / /__\\_\\/ / /   Welcome to François' "
-		puts "         \\  / /______\\/ /		 Tic Tac Toe ! "
-		puts "          \\/___________/    "
+		puts "                                   /\\  ________ \\ "
+		puts "                                  /  \\ \\______/\\ \\ "
+		puts "                                 / /\\ \\ \\  / /\\ \\ \\ "
+		puts "                                / / /\\ \\ \\/ / /\\ \\ \\ "
+		puts "                               / / /__\\ \\ \\/_/__\\_\\ \\__________ "
+		puts "                              / /_/____\\ \\__________  ________ \\ "
+		puts "                              \\ \\ \\____/ / ________/\\ \\______/\\ \\ "
+		puts "                               \\ \\ \\  / / /\\ \\  / /\\ \\ \\  / /\\ \\ \\ "
+		puts "                                \\ \\ \\/ / /\\ \\ \\/ / /\\ \\ \\/ / /\\ \\ \\ "
+		puts "                                 \\ \\/ / /__\\_\\/ / /__\\ \\ \\/_/__\\_\\ \\ "
+		puts "    Welcome to François'          \\  /_/______\\/_/____\\ \\___________\\ "
+		puts "        Tic Tac Toe !             /  \\ \\______/\\ \\____/ / ________  / " 
+		puts "                                 / /\\ \\ \\  / /\\ \\ \\  / / /\\ \\  / / / "
+		puts "                                / / /\\ \\ \\/ / /\\ \\ \\/ / /\\ \\ \\/ / / "
+		puts "                               / / /__\\ \\ \\/_/__\\_\\/ / /__\\_\\/ / / "
+		puts "                              / /_/____\\ \\_________\\/ /______\\/ / "
+		puts "                              \\ \\ \\____/ / ________  __________/ "
+		puts "                               \\ \\ \\  / / /\\ \\  / / / "
+		puts "                                \\ \\ \\/ / /\\ \\ \\/ / / "
+		puts "                                 \\ \\/ / /__\\_\\/ / /"
+		puts "                                  \\  / /______\\/ /		       "
+		puts "                                   \\/___________/    "
 		puts
-		puts "          Press Enter to continue"
+		puts "                   Press Enter to continue"
 		gets
 	end
 	#menu de choix de nom pour les utilisateurs 
@@ -97,9 +97,19 @@ class Game
 		puts "                      First lets give a name to Player1"
 		print "                      > "
 		@player1.name = gets.chomp
+		while(@player1.name =="") do
+			puts "                      Don't let me with an empty name :("
+			print "                      > "
+			@player1.name = gets.chomp
+		end
 		puts "                      Now, lets give a name to Player2"
 		print "                      > "
 		@player2.name = gets.chomp
+		while(@player2.name =="") do
+			puts "                      Don't let me with an empty name :("
+			print "                      > "
+			@player2.name = gets.chomp
+		end
 		puts 
 		puts "                      Great ! lets start the game :)"
 		sleep(2)
@@ -107,7 +117,7 @@ class Game
 	def display_game_menu
 		system "clear"
 		puts "\n\n\n"
-		puts "                          G A M E      M E N U\n\n\n\n"
+		puts "                        G A M E          M E N U\n\n\n\n"
 		puts "	 Player 1                              \t\tPlayer 2\n"
 		puts "	 #{@player1.name}                      \t\t\t#{@player2.name}"
 		print "  	 Playing as :"
@@ -116,15 +126,15 @@ class Game
 		((@player2.circle_or_cross)? (puts "Red") : (puts "Blue")) 
 		puts "	 #{@player1.score} victories                       \t\t#{@player2.score} victories \n\n\n"
 		puts
-		puts "                 In François's Tic Tac Toe, Red Starts\n" 
+		puts "                   In François's Tic Tac Toe, Red Starts\n" 
 		puts
 		puts "                   1. Launch game with parameters"
-		puts "                      2. Change Starting player"
-		puts "                        3. Change Players name"
-		puts "                           4. Reset scores"
-		puts "                               5. Quit"
+		puts "                   2. Change Starting player"
+		puts "                   3. Change Players name"
+		puts "                   4. Reset scores"
+		puts "                   5. Quit"
 	end 
 	def display_goodbye
-		puts "implement the goodbye screen you lazy fuck"
+		system 'catpix sources/pika.png'
 	end
 end

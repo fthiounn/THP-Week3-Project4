@@ -8,6 +8,14 @@ Self Notes :
 	- Utilisez les fleches pour deplacer la selection & confirmer la selection avec enter
 	- 
 
+Quick fix for RMagick:
+
+mac os :
+brew uninstall imagemagick
+brew install imagemagick@6
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+brew link --force imagemagick@6
+gem install rmagick
 
 
 Description du projet :

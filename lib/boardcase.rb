@@ -26,7 +26,6 @@ class BoardCase
 	end
 	def check_case (player)
 		@case_checked = true
-		puts player.circle_or_cross
 		@circle_or_cross = player.circle_or_cross
 	end
 	def print_case(line)

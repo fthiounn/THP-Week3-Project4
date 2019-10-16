@@ -21,8 +21,20 @@ class Application
 	def perform
 		while !@game_board.is_over? && !@user_exit do
 			system 'clear'
-			puts "\n\n\n\n\n"
+			puts "\n\n"
+			puts "\tThe rules are simple : "
+			puts "\tSelect a square with the arrows and play it by pressing 'p'"
+			puts "\n\n"
 			print_board
+			if @game_board.whos_turn_is_it? == @player1.circle_or_cross then
+				print "\n\tIt's #{@player1.name}'s turn ! (playing "
+				((@player1.circle_or_cross)? (print "Red)") : (print "Blue)"))
+			else
+				print "\n\tIt's #{@player2.name}'s turn ! (playing "
+				((@player2.circle_or_cross)? (print "Red)") : (print "Blue)"))
+			end
+			puts
+			puts "\tBtw you can always go back to main menu by pressing 'q'"
 			process_action(read_char)
 		end
 		display_match_result
@@ -51,11 +63,12 @@ class Application
 			@player2.score +=1
 			puts "player #{@player2.name} won!"
 		end
-			puts "INSERT ASCII ART VICTORY HERE"
+		
+#ASCII HERE
 	end
 	def process_action(input)
 		case input
-	  when "s"#selection
+	  when "p"#selection
 	  	if @game_board.whos_turn_is_it? == @player1.circle_or_cross then
 	  		@game_board.check_current_case(@player1)
 	  	elsif @game_board.whos_turn_is_it? == @player2.circle_or_cross then

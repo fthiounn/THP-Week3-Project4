@@ -59,7 +59,8 @@ class Board
 			end
 		end
 		if !@board_array[0][2].is_free? && !@board_array[1][1].is_free? && !@board_array[2][0].is_free? then
-			if ( !@board_array[0][0].get_sign == !@board_array[1][1].get_sign ) && ( @board_array[1][1].get_sign == !@board_array[2][0].get_sign ) then
+			if ( !@board_array[0][2].get_sign == !@board_array[1][1].get_sign ) && ( !@board_array[1][1].get_sign == !@board_array[2][0].get_sign ) then
+
 				return @board_array[0][2].get_sign
 			end
 		end
@@ -72,9 +73,11 @@ class Board
 			@current_turn+=1
 		end
 	end
+	#print du board ligne par ligne
 	def print_board
 		3.times do |row|
 			5.times do |line|
+				print "\t\t     "
 				@board_array[row][0].print_case(line)
 				@board_array[row][1].print_case(line)
 				@board_array[row][2].print_case(line)
