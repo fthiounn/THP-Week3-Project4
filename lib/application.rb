@@ -52,19 +52,18 @@ class Application
 		match_won(tmp) 
 	end
 	def match_draw
-		puts "DRAWW !"
-		puts "go get a cool ascii art !"
+		puts "\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t---   DRAW   ---".green
+		sleep(3)
 	end
 	def match_won(tmp)
 		if(@player1.circle_or_cross == tmp)
 			@player1.score +=1
-			puts "Player #{@player1.name} won!"
+			puts "\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\tPlayer #{@player1.name} won!".green
 		else
 			@player2.score +=1
-			puts "player #{@player2.name} won!"
+			puts "\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\tPlayer #{@player2.name} won!".green
 		end
-		
-#ASCII HERE
+		sleep(3)
 	end
 	def process_action(input)
 		case input

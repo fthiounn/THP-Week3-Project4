@@ -1,12 +1,14 @@
 THP - Week3 - Project 4 - Morpion !
 François THIOUNN
 
-Self Notes : 
-	- Menu d'acceuil géré par class Game - choix du nom des joueurs et du pion (on determine ici qui commence la partie)
-	-  
-	- Utiliser 3 couleurs : rouge et bleu pour les utilisateurs / bleu pour la selection en cours
-	- Utilisez les fleches pour deplacer la selection & confirmer la selection avec enter
-	- 
+
+
+Il est possible d'avoir des soucis avec la gem catfix et plus en particulier la gem imagemagick
+Si c'est le cas il y a un quick fix pour mac
+
+Si il est impossible de l'installer juste commenter la ligne 138 de game.rb
+
+system 'catpix sources/pika.png'
 
 Quick fix for RMagick:
 
@@ -16,6 +18,9 @@ brew install imagemagick@6
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 brew link --force imagemagick@6
 gem install rmagick
+
+
+
 
 
 Description du projet :
