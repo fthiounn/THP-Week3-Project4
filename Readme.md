@@ -2,6 +2,13 @@ THP - Week3 - Project 4 - Morpion !
 François THIOUNN
 
 
+Run 'ruby app.rb' from folder root to play ;)
+
+
+
+
+
+
 
 Il est possible d'avoir des soucis avec la gem catfix et plus en particulier la gem imagemagick
 Si c'est le cas il y a un quick fix pour mac
