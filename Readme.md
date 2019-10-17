@@ -6,7 +6,7 @@ François THIOUNN
 Il est possible d'avoir des soucis avec la gem catfix et plus en particulier la gem imagemagick
 Si c'est le cas il y a un quick fix pour mac
 
-Si il est impossible de l'installer juste commenter la ligne 138 de game.rb
+Si vous n'y arrivez pas, juste commenter la ligne 138 de game.rb pour passer outre
 
 system 'catpix sources/pika.png'
 
