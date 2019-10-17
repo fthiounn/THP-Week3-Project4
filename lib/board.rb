@@ -1,19 +1,12 @@
 #SPECIFICATIONS Class Board
-
 # ¿WHY?
-#Cette Classe représente le plateau de Jeu, elle contient les cases de jeu
-
-#fonctions :
-# => determiner si on à gagné
-# => gérer les changements d'etats des cases
-# => declancher un print (demander a chaque case de se print)
-# => determiner qui a gagne
-
-
-
+# This class represents a bame board. handles the board cases
+# functions :
+# => check who is the winner and if the game is still ongoing
+# => handles the boardcases states (selection, check and if its free)
+# => prints the board
 class Board
 	attr_accessor :board_array, :current_turn, :selection
-
 	#constructor
 	def initialize
 		@current_turn = 1
@@ -73,7 +66,7 @@ class Board
 			@current_turn+=1
 		end
 	end
-	#print du board ligne par ligne
+	#prints the board line by line
 	def print_board
 		3.times do |row|
 			5.times do |line|
@@ -132,7 +125,6 @@ class Board
 		return true if @current_turn == 1 || @current_turn == 3 || @current_turn == 5 || @current_turn == 7 || @current_turn == 9
 		return false
 	end
-	
 	#unselect current case
 	def unselect_current
 		@board_array[@selection[0]][@selection[1]].unselect_case
@@ -142,8 +134,3 @@ class Board
 		@board_array[@selection[0]][@selection[1]].select_case
 	end
 end
-
-
-
-
-

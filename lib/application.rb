@@ -1,13 +1,9 @@
 #SPECIFICATIONS class Application
-
 # ¿WHY?
-#Cette classe gere les boucles de jeu
-
-#fonctions :
-# => update player info
-# => handles a game
-
-
+# This class handles game loops and the Board Object
+# functions :
+# => handles the game loop and the user inputs
+# => process the end game state : Draw or Win
 
 class Application
 	attr_accessor :player1, :player2, :game_board, :user_exit
@@ -17,7 +13,7 @@ class Application
 		@game_board = Board.new
 		@user_exit = false
 	end
-	#boucle de jeu
+	#game loop
 	def perform
 		while !@game_board.is_over? && !@user_exit do
 			system 'clear'
@@ -39,9 +35,8 @@ class Application
 		end
 		display_match_result
 	end
-
 	private
-
+	# this function check is the game ended with a draw or a victory
 	def display_match_result
 		system 'clear'
 		tmp = @game_board.who_won?
@@ -51,10 +46,12 @@ class Application
 		end
 		match_won(tmp) 
 	end
+	#this function displays the draw screen
 	def match_draw
 		puts "\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t---   DRAW   ---".green
 		sleep(3)
 	end
+	#this function displays the winner screen
 	def match_won(tmp)
 		if(@player1.circle_or_cross == tmp)
 			@player1.score +=1
@@ -65,6 +62,7 @@ class Application
 		end
 		sleep(3)
 	end
+	#this function process the user input
 	def process_action(input)
 		case input
 	  when "p"#selection
@@ -86,7 +84,6 @@ class Application
 	  else 
 	  	puts "move with arrow and confirm with 's"
 	  end
-			
 	end
 	#this function allows me to get the ARROWS keystrokes
 	def read_char
@@ -103,6 +100,7 @@ class Application
 	  STDIN.cooked!
 	  return input
 	end
+	#prints the game board
 	def print_board
 		@game_board.print_board
 	end

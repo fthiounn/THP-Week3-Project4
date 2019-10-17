@@ -1,18 +1,16 @@
 #SPECIFICATIONS class BoardCase
-
 # ¿WHY?
-#Cette classe implémente une case de jeu, elle en gere les différents etats
-
-#etats :
-# => VIDE
-# => selectionnée par un joueur
+# This class represents a board case and its states
+# states :
+# => empty
+# => selected by the payer
+#circle or cross boolean :
 # => CIRCLE is TRUE
 # => CROSS is FALSE
 #fonctions :
 # => printcase
 # => is free
 # => 
-
 class BoardCase
 	attr_accessor :circle_or_cross, :selected, :case_checked
 	def initialize
@@ -20,14 +18,17 @@ class BoardCase
 		@case_checked = false
 		@circle_or_cross = false
 	end
+	#if the case is checked, returns the state (circle or cross)
 	def get_sign
 		return circle_or_cross if case_checked
 		puts "There must be an error, you try to access an unchecked case"
 	end
+	#checks the case with the player sign
 	def check_case (player)
 		@case_checked = true
 		@circle_or_cross = player.circle_or_cross
 	end
+	#just prints line by line the case
 	def print_case(line)
 		if !selected then
 			if !@case_checked then #the case isnt checked
@@ -71,14 +72,16 @@ class BoardCase
 			end
 		end
 	end
+	#mark the case as selected by the user
 	def select_case
 		@selected = true
 	end
+	#unmark the case
 	def unselect_case
 		@selected = false
 	end
+	#send true if the case has not been tagged by a player
 	def is_free?
 		return !case_checked
 	end
-
 end
