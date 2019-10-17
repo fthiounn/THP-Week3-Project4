@@ -135,6 +135,7 @@ class Game
 		puts "                   5. Quit"
 	end 
 	def display_goodbye
-		system 'catpix sources/pika.png'
+		system 'clear'
+		puts "\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\tThanks for Playing ! \n\n\t\t\t\t CYA\n\n\n\n".green
 	end
 end

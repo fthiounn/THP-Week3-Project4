@@ -37,15 +37,15 @@ class BoardCase
 				print "║         ║" if line == 3
 				print "╚═════════╝" if line == 4
 			elsif circle_or_cross then #the case is checked and the symbol is a circle
-				print "╔═════════╗" 										if line == 0
+				print "╔═════════╗" 							if line == 0
 				print "║    "+"■".red+"    ║" 					if line == 1
-				print "║  "+"■".red+"   "+"■".red+"  ║" if line == 2
+				print "║  "+"■".red+"   "+"■".red+"  ║"     	if line == 2
 				print "║    "+"■".red+"    ║" 					if line == 3
-				print "╚═════════╝" 										if line == 4
+				print "╚═════════╝" 							if line == 4
 			else #the case is checked and the symbol is a cross
-				print "╔═════════╗" 																	if line == 0
-				print "║  "+"■".light_blue+"   "+"■".light_blue+"  ║" if line == 1
-				print "║    "+"■".light_blue+"    ║" 									if line == 2
+				print "╔═════════╗" 									if line == 0
+				print "║  "+"■".light_blue+"   "+"■".light_blue+"  ║" 	if line == 1
+				print "║    "+"■".light_blue+"    ║" 					if line == 2
 				print "║  "+"■".light_blue+"   "+"■".light_blue+"  ║" if line == 3
 				print "╚═════════╝" 																	if line == 4
 			end
